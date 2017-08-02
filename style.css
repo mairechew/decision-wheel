@@ -1,0 +1,20 @@
+body {
+  background-color: #FFFAE3;
+}
+
+.nav-wrapper {
+  background-color: #FFFAE3;
+  align-items: center;
+}
+
+#main-container {
+  margin: 50px;
+}
+
+#footer {
+  background-color: #5D576B;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
