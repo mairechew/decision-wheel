@@ -7,6 +7,9 @@ body {
   align-items: center;
 }
 
+#center {
+  align-content: center;
+}
 #main-container {
   margin: 50px;
 }
