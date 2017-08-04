@@ -14,9 +14,13 @@ body {
 }
 
 .input-container {
-  justify-content: center;
+  diplay: grid;
+  grid-column: 33% 33% 33%;
   margin: 50px;
+  justify-content: center;
+  align-self: center;
 }
+
 
 .spin-button {
   display: flex;

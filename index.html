@@ -26,17 +26,15 @@
 
   <section id="main-container">
     <div class="input-container">
-      <div class="row">
-        <div class="input-field col s6">
-          <input value="" id="first_name1" type="text" class="validate">
-          <label class="active center-align" for="first_name1">What ZIP code are you hangry in?</label>
-        </div>
-      </div>
+      <form class="" action="" method="post">
+        <label for="input">Enter your ZIP here</label>
+        <input class="input" name="input" value="" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+        type = "number" maxlength = "5">
+      </form>
     </div>
     <div class="spin-button">
       <button class="btn waves-effect waves-light blue darken-1" type="submit" name="action" id="spin">SPIN
 </button>
-      <!-- <input type="button" value="spin" style="float:left" id='spin'> -->
     </div>
     <div class="spin-button">
       <canvas id="canvas" width="500" height="500"></canvas></div>
@@ -60,7 +58,7 @@
         </div>
       </div>
     </footer>
-</section>
+  </section>
 
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
