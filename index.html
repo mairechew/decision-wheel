@@ -27,34 +27,41 @@
   <section id="main-container">
     <div class="input-container">
       <div class="row">
-        <div class="input-field col s6 right-align">
-          <input value="" id="first_name1" type="text" class="validate center-align">
+        <div class="input-field col s6">
+          <input value="" id="first_name1" type="text" class="validate">
           <label class="active center-align" for="first_name1">What ZIP code are you hangry in?</label>
         </div>
       </div>
     </div>
-    <div class="wheel-container">
-      <input type="button" value="spin" style="float:left" id='spin'>
+    <div class="spin-button">
+      <button class="btn waves-effect waves-light blue darken-1" type="submit" name="action" id="spin">SPIN
+</button>
+      <!-- <input type="button" value="spin" style="float:left" id='spin'> -->
+    </div>
+    <div class="spin-button">
       <canvas id="canvas" width="500" height="500"></canvas></div>
-  </section>
+    <div class="empty">
 
-  <footer>
+    </div>
+
+
+
     <footer class="page-footer" id="footer">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
+          <div class="col l4 s12">
             <h5 class="white-text">Saving your relationship from restaurant indecisiveness.</h5>
           </div>
         </div>
       </div>
       <div class="footer-copyright">
-        <div class="container">
+        <div class="container right-align">
           © 2017 Copyright
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
         </div>
       </div>
     </footer>
-  </footer>
+</section>
+
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="app.js"></script>

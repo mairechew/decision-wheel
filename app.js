@@ -1,18 +1,27 @@
 $(document).ready(function() {
+var topFood = []
+var web = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food&location="
+var userInput;
+
   $.ajax({
     type: "GET",
-    url: "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food&location=80110",
+    url: web + "80110",
     headers: {
       "authorization": "Bearer sZ1Nyfc5TYJ8Q4JV2cPJHT5n0OWABiWOopAVSK4ZUDu3fexkGsM1IYHm1IeYVZI4ELQL0gH9tIF7Xd5kG5GnH_zrmgOCEe6GZ3SUITS4kBGyWX96Z3LlkgtvdYGDWXYx",
       "expires_in": 15551999,
       "token_type": "Bearer"
     },
     success: function(data) {
-      console.log(data.businesses)
+      for (var i=0; i<20; i++) {
+      topFood.push(data.businesses[i].name)
+      console.log(data.businesses[i].name)
+      }
+      console.log(topFood)
+
     }
   })
 
-var options = ["$100", "$10", "$25", "$250", "$30", "$1000", "$1", "$200", "$45", "$500", "7000"];
+var options = ["Anointed BBQ & Soul Food", "Whiskey Biscuit", "Turn-In BBQ", "Acres", "Turtle Boat", "Szechuan Tasty House", "Beirut Grill", "The Post Chicken & Beer", "George's Restaurant", "Steak 'n Shake", "Tokayo Sushi & Thai", "Fit Kitchen", "Cafe 180", "Garibaldi Mexican Bistro", "The Lost Cajun", "Bout Time Pub & Grub", "SmackDaddy Pizza", "Pho 4 U", "Chick-fil-A","Dead Hippie Brewing"];
 
 var startAngle = 0;
 var arc = Math.PI / (options.length / 2);
@@ -103,13 +112,6 @@ function drawRouletteWheel() {
   }
 }
 
-function spin() {
-  spinAngleStart = Math.random() * 10 + 10;
-  spinTime = 0;
-  spinTimeTotal = Math.random() * 3 + 4 * 1000;
-  rotateWheel();
-}
-
 function rotateWheel() {
   spinTime += 30;
   if(spinTime >= spinTimeTotal) {
@@ -121,6 +123,16 @@ function rotateWheel() {
   drawRouletteWheel();
   spinTimeout = setTimeout('rotateWheel()', 30);
 }
+
+
+function spin() {
+  spinAngleStart = Math.random() * 10 + 10;
+  spinTime = 0;
+  spinTimeTotal = Math.random() * 3 + 4 * 1000;
+  rotateWheel();
+}
+
+
 
 function stopRotateWheel() {
   clearTimeout(spinTimeout);

@@ -1,5 +1,6 @@
 body {
   background-color: #FFFAE3;
+
 }
 
 .nav-wrapper {
@@ -10,16 +11,28 @@ body {
 #main-container {
   display: flex;
   flex-direction: column;
-  margin: 50px;
 }
 
 .input-container {
   justify-content: center;
+  margin: 50px;
+}
+
+.spin-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wheel-container {
+  justify-content: space-around;
+}
+
+.empty {
+  height: 100px;
 }
 
 #footer {
   background-color: #5D576B;
-  position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
