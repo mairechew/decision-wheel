@@ -1,14 +1,14 @@
 $(document).ready(function() {
   $.ajax({
     type: "GET",
-    url: "https://api.yelp.com/v3/businesses/search?term=restaurant&latitude=40.82783908257346&longitude=-74.10162448883057",
+    url: "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food&location=80110",
     headers: {
       "authorization": "Bearer sZ1Nyfc5TYJ8Q4JV2cPJHT5n0OWABiWOopAVSK4ZUDu3fexkGsM1IYHm1IeYVZI4ELQL0gH9tIF7Xd5kG5GnH_zrmgOCEe6GZ3SUITS4kBGyWX96Z3LlkgtvdYGDWXYx",
       "expires_in": 15551999,
       "token_type": "Bearer"
     },
     success: function(data) {
-      console.log(data)
+      console.log(data.businesses)
     }
   })
 
