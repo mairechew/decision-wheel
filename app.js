@@ -1,6 +1,7 @@
 $(document).ready(function() {
+
   var topFood = []
-  var web = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food&location="
+  var web = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=donuts&location="
 
   $(".reset").click(function() {
     $(this).closest('form').find("input[type=number], textarea").val("");
@@ -9,6 +10,7 @@ $(document).ready(function() {
   $('form').on('submit', function(event) {
     event.preventDefault();
     var x = $('input').val()
+
     $.ajax({
       type: "GET",
       url: web + x,
@@ -29,6 +31,19 @@ $(document).ready(function() {
       }
     })
   })
+
+
+// Use sliding scale to get radius user is willing to travel
+// var miles = 0;
+//
+// $('#test5').on("change", function(){
+//   var radPre = this.value;
+//   $('radius').text(radPre);
+//   })
+//
+// function milesMeters(miles) {
+//   return parseInt(miles * 1609);
+// }
 
   var options = [
     "",
@@ -137,7 +152,7 @@ $(document).ready(function() {
     var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
     startAngle += (spinAngle * Math.PI / 180);
     drawRouletteWheel();
-    spinTimeout = setTimeout(rotateWheel(), 30);
+    spinTimeout = setTimeout(rotateWheel(), 100);
   }
 
   function spin() {
@@ -154,8 +169,9 @@ $(document).ready(function() {
     var index = Math.floor((360 - degrees % 360) / arcd);
     ctx.save();
     ctx.font = 'bold 30px Helvetica, Arial';
+    // var text = "fuck yes"
     var text = options[index]
-    ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
+    ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250+10);
     ctx.restore();
   }
 
